@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .topnav {
+            overflow: hidden;
+            background-color: #e9e9e9;
+        }
+        
+        .topnav a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        
+        .topnav a.active {
+            background-color: #2196F3;
+            color: white;
+        }
+        
+        .topnav .search-container {
+            float: right;
+        }
+        
+        .topnav input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+        
+        .topnav .search-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .topnav .search-container button:hover {
+            background: #ccc;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .topnav .search-container {
+                float: none;
+            }
+            .topnav a,
+            .topnav input[type=text],
+            .topnav .search-container button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+            .topnav input[type=text] {
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                font-family: 'Lato', sans-serif;
+            }
+            
+            .overlay {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: rgb(0, 0, 0);
+                background-color: rgba(0, 0, 0, 0.9);
+                overflow-x: hidden;
+                transition: 0.5s;
+            }
+            
+            .overlay-content {
+                position: relative;
+                top: 25%;
+                width: 100%;
+                text-align: center;
+                margin-top: 30px;
+            }
+            
+            .overlay a {
+                padding: 8px;
+                text-decoration: none;
+                font-size: 36px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+            
+            .overlay a:hover,
+            .overlay a:focus {
+                color: #f1f1f1;
+            }
+            
+            .overlay .closebtn {
+                position: absolute;
+                top: 20px;
+                right: 45px;
+                font-size: 60px;
+            }
+            
+            @media screen and (max-height: 450px) {
+                .overlay a {
+                    font-size: 20px
+                }
+                .overlay .closebtn {
+                    font-size: 40px;
+                    top: 15px;
+                    right: 35px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="#">About</a>
+
+                <a href="#">Services</a>
+                <a href="#">Clients</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+
+
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+        <script>
+            function openNav() {
+                document.getElementById("myNav").style.width = "100%";
+            }
+
+            function closeNav() {
+                document.getElementById("myNav").style.width = "0%";
+            }
+        </script>
+
+    </body>
+
+    </html>
+
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <div class="search-container">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: Verdana, sans-serif;
+                margin: 0
+            }
+            
+            .mySlides {
+                display: none;
+            }
+            
+            img {
+                vertical-align: middle;
+            }
+            
+            .slideshow-container {
+                max-width: 500px;
+                position: relative;
+                margin: auto;
+            }
+            
+            .prev,
+            .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: white;
+                font-weight: bold;
+                font-size: 50px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+            
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+                padding right: 10px;
+            }
+            
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+            
+            .text {
+                color: white;
+                font-size: 50px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .numbertext {
+                color: #0d0707;
+                font-size: 20px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+            
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+            
+            .active,
+            .dot:hover {
+                background-color: #717171;
+            }
+            
+            .fade {
+                animation-name: fade;
+                animation-duration: 20s;
+            }
+            
+            @keyframes fade {
+                from {
+                    opacity: .4
+                }
+                to {
+                    opacity: 1
+                }
+            }
+            
+            @media only screen and (max-width: 300px) {
+                .prev,
+                .next,
+                .text {
+                    font-size: 20px
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-12-3.jpg " style="width:100% ">
+                <div class="text ">iphone</div>
+            </div>
+            <div class="mySlides fade ">
+                <div class="numbertext ">2 / 3</div>
+                <img src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1708679074/Croma%20Assets/Communication/Mobiles/Images/301918_0_f3f5jq.png?tr=w-600" style="width:100% ">
+                <div class="text ">nothing </div>
+            </div>
+            <div class="mySlides fade ">
+                <div class="numbertext ">3 / 3</div>
+                <img src="https://fdn2.gsmarena.com/vv/pics/realme/realme-11-pro-3.jpg " style="width:100% ">
+                <div class="text ">realme</div>
+            </div>
+            <a class="prev " onclick="plusSlides(-1) ">❮</a>
+            <a class="next " onclick="plusSlides(1) ">❯</a>
+        </div>
+        <br>
+        <div style="text-align:center ">
+            <span class="dot " onclick="currentSlide(1) "></span>
+            <span class="dot " onclick="currentSlide(2) "></span>
+            <span class="dot " onclick="currentSlide(3) "></span>
+        </div>
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides ");
+                let dots = document.getElementsByClassName("dot ");
+                if (n > slides.length) {
+                    slideIndex = 1
+                }
+                if (n < 1) {
+                    slideIndex = slides.length
+                }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none ";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active ", " ");
+                }
+                slides[slideIndex - 1].style.display = "block ";
+                dots[slideIndex - 1].className += " active ";
+            }
+        </script>
+    </body>
+
+    </html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="c.css">
+    </head>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+        }
+        
+        .grid img {
+            width: 100%;
+        }
+    </style>
+
+    <body>
+        <h1>Photos shoots by iphone</h1>
+        <div class="grid">
+            <img src="https://mdbootstrap.com/img/new/standard/city/078.webp">
+            <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/053.webp">
+            <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp ">
+            <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp ">
+            <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp ">
+            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/055.webp ">
+        </div>
+    </body>
+    <h1>Nature video</h1>
+
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+    }
+    
+    .grid video {
+        width: 100%;
+    }
+</style>
+
+<body>
+    <div class="grid">
+        <video width="400*300" controls>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-countryside-meadow-4075-large.mp4" type="video/mp4">          
+          </video>
+        <video width="400*300" controls>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-going-down-a-curved-highway-through-a-mountain-range-41576-large.mp4"" type="video/mp4">
+          </video>
+        <video width="400*300" controls>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-waterfall-in-forest-2213-large.mp4" type="video/mp4">
+          </video>
+        <video width="400*300" controls>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-white-sand-beach-background-1564-large.mp4" type="video/mp4">
+          </video>
+        <video width="400*300" controls>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-macaw-parrot-feeding-on-a-branch-4669-large.mp4" type="video/mp4">
+          </video>
+        <video width="400*300" controls>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-blue-sky-background-as-the-clouds-travel-blown-by-the-26108-large.mp4" type="video/mp4">
+                     </video>
+
+    </div>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <title>Footer</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
+    </head>
+
+    <body>
+        <footer class="small bg-light">
+            <div class="container py-3 py-sm-5">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <h6>Quick links</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">What's new</a></li>
+                            <li><a href="#">Featured Product</a></li>
+                            <li><a href="#">News letter</a></li>
+                            <li><a href="#">My account</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <h6>Information</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Membership</a></li>
+                            <li><a href="#">Shipping &amp; returns</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <h6>Follow us</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                            <li><a href="#">YouTube</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <address>
+                  <strong>BIET Jhansi</strong><br />
+                  Panchwati Hostel<br />
+                  Jhansi, Uttar Pradesh<br />
+                  <abbr title="Telephone">T:</abbr
+                  ><a href="tel:+919876543210">(987) 654-3210</a><br />
+                  <abbr title="Mail">M:</abbr
+                  ><a href="mailto:info@domain.com">info@domain.com</a>
+                </address>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-9">
+                        <ul class="list-inline">
+                            <li class="list-inline-item">&copy; 2017 Web Company, Inc.</li>
+                            <li class="list-inline-item">All rights reserved.</li>
+                            <li class="list-inline-item">
+                                <a href="#">Terms of use and privacy policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <div class="dropdown dropup p-0">
+                            <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Visit other sites:
+                  </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a href="#" class="dropdown-item">www.otherwebsite.com</a>
+                                <a href="#" class="dropdown-item">www.newwebsite.com</a>
+                                <a href="#" class="dropdown-item">www.oldwebsite.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    </body>
+
+    </html>
+
+</body>
+
+</html>
